@@ -1,6 +1,6 @@
 # TCGA RNA Dataset ML Pipeline
 
-This repository demonstrates a machine learning pipeline for classifying liver tissue samples using gene expression data. The model is trained on TCGA (The Cancer Genome Atlas) RNA-seq data and deployed as a REST API on Google Cloud's Vertex AI.
+This repository demonstrates a simple machine learning pipeline for classifying liver tissue samples using gene expression data. The model is trained on TCGA (The Cancer Genome Atlas) RNA-seq data and deployed as a REST API on Google Cloud's Vertex AI.
 
 ## Overview
 
@@ -13,7 +13,6 @@ This project showcases:
 ## Results
 
 - **Balanced accuracy** on test set: **0.91**
-- Feature reduction: ~20,000 genes → ~50 PCA components
 
 ## Quick Start
 
@@ -118,7 +117,7 @@ python scripts/pipeline.py
 
 ### Data Exploration
 
-Run the exploratory analysis notebook:
+Exploratory script will be made available upon reasonable requests. When acquired, run the exploratory analysis notebook:
 
 ```bash
 python scripts/explore_rna_data.py
@@ -129,11 +128,7 @@ This generates:
 - Statistical analysis (ANOVA)
 - Pathway enrichment results
 
-### Testing
 
-```bash
-pytest
-```
 
 ## Configuration
 
