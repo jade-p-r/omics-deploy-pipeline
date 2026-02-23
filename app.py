@@ -30,7 +30,7 @@ def _predict_from_features(features):
     if feature_array.ndim == 1:
         feature_array = feature_array.reshape(1, -1)
     return model.predict(feature_array)
-    
+
 @app.route('/health', methods=['GET'])
 def health():
     return jsonify({'status': 'healthy'}), 200
@@ -38,6 +38,11 @@ def health():
 @app.route('/predict', methods=['POST'])
 def predict():
     data = request.get_json(silent=True) or {}
+    
+    #unwrap Vertex AI instances format
+    if 'instances' in data:
+        data = data['instances'][0]
+    
     try:
         if 'gene_entry' in data:
             transformed = preprocessor.transform_new_gene_entry(data['gene_entry'])
@@ -50,7 +55,8 @@ def predict():
             }), 400
     except (ValueError, TypeError) as exc:
         return jsonify({'error': str(exc)}), 400
-    return jsonify({'prediction': prediction.tolist()})
+    
+    return jsonify({'predictions': prediction.tolist()})
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)
