@@ -1,9 +1,7 @@
-import os
 from flask import Flask, request, jsonify
 import joblib
 import numpy as np
 from google.cloud import storage
-from scripts.gene_preprocessor import GenePreprocessor
 
 app = Flask(__name__)
 
@@ -37,7 +35,7 @@ def health():
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    data = request.get_json(silent=True) or {}
+    data = request.get_json(force=True, silent=True) or {}
     
     #unwrap Vertex AI instances format
     if 'instances' in data:

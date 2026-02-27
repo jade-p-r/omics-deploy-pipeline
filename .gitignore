@@ -9,6 +9,7 @@ models/
 # Scripts
 scripts/explore_rna_data.py
 scripts/deploy.sh
+exploration/
 pipeline.yaml
 
 # Test directories
