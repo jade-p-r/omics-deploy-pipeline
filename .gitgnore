@@ -1,7 +1,0 @@
-*.joblib
-*.csv
-scripts/explore_rna_data.py
-data/
-tests/
-scripts/deploy.sh
-pipeline.yaml

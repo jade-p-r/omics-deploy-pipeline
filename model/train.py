@@ -9,7 +9,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import balanced_accuracy_score
 from sklearn.model_selection import train_test_split
 
-from scripts.gene_preprocessor import GenePreprocessor
+from preprocessor import GenePreprocessor
 
 
 TARGET_COLUMN = "sample_type_id"
