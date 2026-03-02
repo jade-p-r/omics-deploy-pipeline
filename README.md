@@ -1,6 +1,10 @@
 # TCGA RNA Deployment Project
 
-This repository runs a dev-focused Vertex AI workflow for training and deployment from a single pipeline entrypoint.
+
+This repository runs a dev-focused Vertex AI workflow for training and deployment from a single pipeline entrypoint. The deployment process via Vertex AI Pipelines includes three steps: training, model upload and model deployment to an endpoint.
+
+![Pipeline diagram](plots/pipeline.png)
+
 
 ## Project Architecture
 
